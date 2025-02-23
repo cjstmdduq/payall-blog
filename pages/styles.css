@@ -1,0 +1,235 @@
+/* Pretendard 웹폰트 import */
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css");
+
+/* 변수 선언 */
+:root {
+  /* 색상 변수 */
+  --primary-blue: #0066cc;
+  --white: #ffffff;
+  --light-blue: #e6f0ff;
+  --dark-gray: #333;
+  --light-gray: #696969;
+  --black: #191919;
+  --background-light: #f8f9fa;
+  --navy-dark: #001f3f;
+  --navy-light: #003366;
+  --gold: #ffd700;
+  --primary-color: #4a90e2;
+  --text-dark: #1a202c;
+
+  /* 그라데이션 */
+  --primary-gradient: linear-gradient(135deg, #4299e1, #2b6cb0);
+  --primary-gradient-2: linear-gradient(135deg, #4a90e2 0%, #357abd 100%);
+
+  /* 그림자 */
+  --shadow-color: rgba(43, 108, 176, 0.1);
+  --shadow-color-2: rgba(74, 144, 226, 0.2);
+}
+
+/* 기본 리셋 및 설정 */
+* {
+  margin: 0; 
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Pretendard", -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif;
+  color: var(--dark-gray);
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* 레이아웃 구조 */
+.blog-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+}
+
+.blog-header {
+  margin-bottom: 4rem;
+  padding-bottom: 4rem;
+  text-align: center;
+}
+
+.blog-section {
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+}
+
+/* 타이포그래피 */
+.blog-title {
+  font-size: 2rem;
+  font-weight: 500;
+  color: var(--navy-dark);
+  margin-bottom: 1rem;
+  line-height: 1.3;
+}
+
+.blog-writer {
+  font-size: 1rem;
+  font-weight: 400;
+  text-align: center;
+  color: var(--light-gray);
+}
+
+.blog-writer .date::after {
+  content: "・";
+  margin: 0 0.5rem;
+}
+
+.blog-content {
+  font-size: 1.2rem;
+  counter-reset: section;
+}
+
+/* 섹션 타이틀 스타일 */
+.section-title {
+  font-size: 1.5rem;
+  color: var(--navy-dark);
+  margin: 1.5rem 0 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--light-blue);
+  counter-increment: section;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.section-title::before {
+  content: counter(section);
+  background-color: #f0f0f0;
+  color: #333;
+  min-width: 1.7rem;
+  height: 1.7rem;
+  border-radius: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.5em;
+  font-weight: 500;
+  flex-shrink: 0;
+}
+
+/* 이미지 스타일 */
+.blog-header-image {
+  width: 100%;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 10px;
+  box-shadow: #333;
+}
+
+/* 콘텐츠 박스 스타일 */
+.highlight-box {
+  background: var(--light-blue);
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin: 1.5rem 0;
+  border-left: 4px solid var(--primary-blue);
+}
+
+.stat-box {
+  background: var(--primary-gradient);
+  color: var(--white);
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin: 1.5rem 0;
+}
+
+.gray-box {
+  background: #f5f5f5;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin: 1.5rem 0;
+}
+
+.quote-box {
+  background: #fff;
+  padding: 1.5rem 2rem;
+  margin: 1.5rem 0;
+  border-left: 4px solid #666;
+  font-style: italic;
+  position: relative;
+}
+
+.quote-box::before {
+  content: '"';
+  font-size: 4rem;
+  color: #e0e0e0;
+  position: absolute;
+  left: 1rem;
+  top: -1rem;
+}
+
+.warning-box {
+  background: #fff3e0;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin: 1.5rem 0;
+  border-left: 4px solid #ff9800;
+}
+
+.tip-box {
+  background: #e8f5e9;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin: 1.5rem 0;
+  border-left: 4px solid #4caf50;
+}
+
+.important-box {
+  background: #e3f2fd;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin: 1.5rem 0;
+  border: 2px solid #2196f3;
+}
+
+.definition-box {
+  background: #fafafa;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin: 1.5rem 0;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.code-box {
+  background: #f5f5f5;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin: 1.5rem 0;
+  font-family: monospace;
+  border: 1px solid #e0e0e0;
+}
+
+.checklist-box {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin: 1.5rem 0;
+  border: 1px solid #e0e0e0;
+}
+
+.memo-box {
+  background: #fff9c4;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin: 1.5rem 0;
+  border: 1px dashed #fbc02d;
+}
+
+/* 푸터 스타일 */
+.footnote {
+  font-size: 0.9rem;
+  color: var(--light-gray);
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--light-blue);
+}
