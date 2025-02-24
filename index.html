@@ -9,25 +9,64 @@
 </head>
 
 <body>
-
-  <!-- 프로모션 배너(고정) -->
+  <!-- 프로모션 Section -->
   <div class="promo-banner">
-    <strong>SPEEDALL</strong> 시즌 이벤트 할인 진행 중!
-    <a href="#" class="promo-link"></a>
+    <div class="container">
+      <a href="#" class="promo-link">
+        <strong>SPEED-ALL</strong> 비사업자 단말기 당일 개통 서비스
+      </a>
+    </div>
   </div>
 
-  <!-- 헤더 -->
+
+  <!------------------------------------------------------------->
+  <!------------------------------------------------------------->
+  <!------------------------------------------------------------->
+  <!-- mob 전용 상담문의버튼 Section -->
+  <button class="call-button" id="callButton" onclick="makeCall()">
+    <i class="bi bi-telephone-fill"></i>
+  </button>
+
+
+
+  <!------------------------------------------------------------->
+  <!------------------------------------------------------------->
+  <!------------------------------------------------------------->
+  <!-- 헤더 Section -->
   <header class="header">
-    <div class="container">
-      <div class="logo">PAYALL blog</div>
-      <ul class="nav-menu">
-        <li><a href="#">블로그홈</a></li>
-        <li><a href="https://cjstmdduq.github.io/payall/">홈페이지</a></li>
-        <!-- <li><a href="#">Blog</a></li> -->
-        <li><button class="contact-btn">상담문의</button></li>
-      </ul>
+    <div class="header-container">
+      <!-- 로고는 왼쪽에 고정 -->
+      <a href="#" class="logo">PAYALL</a>
+
+      <!-- 오른쪽 영역(메뉴 + 가맹문의 + 햄버거)을 묶어줄 컨테이너 -->
+      <div class="right-area">
+        <!-- PC용 메뉴 -->
+        <nav class="desktop-nav">
+          <ul class="nav-menu">
+            <li><a href="#services">서비스</a></li>
+            <li><a href="#blog-section">블로그</a></li>
+          </ul>
+        </nav>
+
+        <!-- 가맹 문의 버튼 -->
+        <button class="contact-btn" onclick="location.href='tel:02-6402-5502';">가맹 문의</button>
+
+        <!-- 햄버거 버튼(모바일에서만 보이도록) -->
+        <button class="navbar-toggler" id="menuToggle">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
     </div>
+
+    <!-- 모바일 전용 메뉴 -->
+    <nav class="mobile-nav" id="mobileNav">
+      <a href="#services">서비스</a>
+      <a href="#blog-section">블로그</a>
+    </nav>
   </header>
+
+
+
 
   <!-- 메인 레이아웃 -->
   <div class="main-wrapper">
