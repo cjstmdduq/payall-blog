@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="ko">
-
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>페이올 Blog</title>
+  <!-- 메인 CSS -->
   <link rel="stylesheet" href="./styles.css" />
-</head>
 
+  <!-- Pretendard 폰트 -->
+  <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
+</head>
 <body>
   <!-- 프로모션 Section -->
   <div class="promo-banner">
@@ -18,105 +21,75 @@
     </div>
   </div>
 
-
-  <!------------------------------------------------------------->
-  <!------------------------------------------------------------->
-  <!------------------------------------------------------------->
-  <!-- mob 전용 상담문의버튼 Section -->
+  <!-- 모바일 전용 상담문의 버튼 -->
   <button class="call-button" id="callButton" onclick="makeCall()">
     <i class="bi bi-telephone-fill"></i>
   </button>
 
-
-
-  <!------------------------------------------------------------->
-  <!------------------------------------------------------------->
-  <!------------------------------------------------------------->
   <!-- 헤더 Section -->
   <header class="header">
     <div class="header-container">
-      <!-- 로고는 왼쪽에 고정 -->
       <a href="#" class="logo">PAYALL</a>
 
-      <!-- 오른쪽 영역(메뉴 + 가맹문의 + 햄버거)을 묶어줄 컨테이너 -->
       <div class="right-area">
-        <!-- PC용 메뉴 -->
         <nav class="desktop-nav">
           <ul class="nav-menu">
-            <li><a href="#services">서비스</a></li>
-            <li><a href="#blog-section">블로그</a></li>
+            <!-- <li><a href="#services">서비스</a></li>
+            <li><a href="#blog-section">블로그</a></li> -->
           </ul>
         </nav>
-
-        <!-- 가맹 문의 버튼 -->
         <button class="contact-btn" onclick="location.href='tel:02-6402-5502';">가맹 문의</button>
-
-        <!-- 햄버거 버튼(모바일에서만 보이도록) -->
         <button class="navbar-toggler" id="menuToggle">
-          <span class="navbar-toggler-icon"></span>
+          <!-- <span class="navbar-toggler-icon"></span> 업무효율화를 위한 임시제거 -->
         </button>
       </div>
     </div>
 
-    <!-- 모바일 전용 메뉴 -->
     <nav class="mobile-nav" id="mobileNav">
       <a href="#services">서비스</a>
       <a href="#blog-section">블로그</a>
     </nav>
+    
   </header>
-
-
-
 
   <!-- 메인 레이아웃 -->
   <div class="main-wrapper">
-    <!-- 사이드바 -->
     <aside class="sidebar">
       <section class="sidebar-section">
-          <h2>자주 묻는 질문(FAQ)</h2>
-          <ul>
-              <li><button class="sidebar-btn" onclick="showContent('frame1')">페이올 소개(Introduction)</button></li>
-              <li><button class="sidebar-btn" onclick="showContent('frame2')">승인금지업종은 무엇인가요?</button></li>
-              <li><button class="sidebar-btn" onclick="showContent('frame3')">가맹문의하려면?</button></li>
-          </ul>
+        <h2>자주 묻는 질문(FAQ)</h2>
+        <ul>
+          <li><button class="sidebar-btn" onclick="showContent(event, 'frame1')">페이올 소개</button></li>
+          <li><button class="sidebar-btn" onclick="showContent(event, 'frame2')">승인금지업종</button></li>
+          <li><button class="sidebar-btn" onclick="showContent(event, 'frame3')">가맹문의</button></li>
+        </ul>
       </section>
-  
+
       <section class="sidebar-section">
-          <h2>비사업자단말기</h2>
-          <ul>
-              <li><button class="sidebar-btn" onclick="showContent('frame4')">비사업자 단말기란?</button></li>
-              <li><button class="sidebar-btn" onclick="showContent('frame5')">어떤 기기를 사용하나요?</button></li>
-          </ul>
+        <h2>비사업자단말기</h2>
+        <ul>
+          <li><button class="sidebar-btn" onclick="showContent(event, 'frame4')">비사업자 단말기란?</button></li>
+          <li><button class="sidebar-btn" onclick="showContent(event, 'frame5')">어떤 기기를 사용?</button></li>
+        </ul>
       </section>
-  
+
       <section class="sidebar-section">
-          <h2>수기결제</h2>
-          <ul>
-              <li><button class="sidebar-btn" onclick="showContent('frame6')">수기결제 안내</button></li>
-              <li><button class="sidebar-btn" onclick="showContent('frame7')">수기결제 방법</button></li>
-              <li><button class="sidebar-btn" onclick="showContent('frame8')">자주 묻는 질문</button></li>
-          </ul>
+        <h2>수기결제</h2>
+        <ul>
+          <li><button class="sidebar-btn" onclick="showContent(event, 'frame6')">수기결제 안내</button></li>
+          <li><button class="sidebar-btn" onclick="showContent(event, 'frame7')">수기결제 방법</button></li>
+          <li><button class="sidebar-btn" onclick="showContent(event, 'frame8')">자주 묻는 질문</button></li>
+        </ul>
       </section>
-  </aside>
+    </aside>
 
     <!-- 메인 콘텐츠 -->
     <main class="content-area">
-      <!-- FAQ 섹션 -->
-      <iframe id="frame1" class="content-frame" src="./pages/introduction.html" width="100%" height="100%" frameborder="0"></iframe>
-      <iframe id="frame2" class="content-frame" src="./pages/forbidden.html" width="100%" height="100%" frameborder="0"></iframe>
-      <iframe id="frame3" class="content-frame" src="./pages/inquiry.html" width="100%" height="100%" frameborder="0"></iframe>
-      
-      <!-- 비사업자단말기 섹션 -->
-      <iframe id="frame4" class="content-frame" src="./pages/non-business.html" width="100%" height="100%" frameborder="0"></iframe>
-      <iframe id="frame5" class="content-frame" src="./pages/devices.html" width="100%" height="100%" frameborder="0"></iframe>
-      
-      <!-- 수기결제 섹션 -->
-      <iframe id="frame6" class="content-frame" src="./pages/manual-payment-1.html" width="100%" height="100%" frameborder="0"></iframe>
-      <iframe id="frame7" class="content-frame" src="./pages/manual-payment-2.html" width="100%" height="100%" frameborder="0"></iframe>
-      <iframe id="frame8" class="content-frame" src="./pages/manual-payment-3.html" width="100%" height="100%" frameborder="0"></iframe>
-  </main>
+      <!-- 초기에 src를 비워두고, JS에서 onload 시점에 셋팅해줄 예정 / scrolling auto, 이거 잘 공부할것 -->
+      <iframe id="content-frame" src="" width="100%" frameborder="0" scrolling="auto"></iframe>
+    </main>
   </div>
+
+  <!-- 메인 JS -->
   <script src="./script.js"></script>
 </body>
-
 </html>
